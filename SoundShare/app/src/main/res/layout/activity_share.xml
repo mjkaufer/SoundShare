@@ -9,14 +9,14 @@
     tools:context=".Share"
     android:id="@+id/Share">
 
-    <fragment
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:name="org.kaufer.soundshare.Info"
-        android:id="@+id/fragment"
-        tools:layout="@layout/fragment_info"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <!--<fragment-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:name="org.kaufer.soundshare.Info"-->
+        <!--android:id="@+id/fragment"-->
+        <!--tools:layout="@layout/fragment_info"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +25,10 @@
         android:text="Share Sound"
         android:id="@+id/textView"
         android:layout_below="@+id/fragment"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="48dp"
+        android:gravity="center"
+        android:paddingTop="36dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -41,12 +44,13 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/share"
-        android:layout_alignLeft="@+id/fragment"
-        android:layout_alignStart="@+id/fragment"
-        android:layout_alignRight="@+id/fragment"
-        android:layout_alignEnd="@+id/fragment"
-        android:layout_below="@+id/textView"
-        android:paddingTop="100dp">
+        android:paddingTop="100dp"
+        android:id="@+id/"
+        android:layout_alignRight="@+id/share"
+        android:layout_alignEnd="@+id/share"
+        android:layout_alignLeft="@+id/share"
+        android:layout_alignStart="@+id/share"
+        android:layout_below="@+id/textView">
 
         <EditText
             android:layout_width="match_parent"
