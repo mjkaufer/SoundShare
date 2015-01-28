@@ -1,38 +1,29 @@
 package org.kaufer.soundshare;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.firebase.client.Firebase;
 
-public class Home extends Activity {
 
-    Button share, sounds;
+public class Share extends Activity {
+
+    Button share;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_share);
+        Firebase.setAndroidContext(this);
         share = (Button)findViewById(R.id.share);
-        sounds = (Button)findViewById(R.id.sounds);
-
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Share.class);
-                startActivity(i);
-            }
-        });
 
-        sounds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Sounds.class);
-                startActivity(i);
             }
         });
     }
@@ -41,7 +32,7 @@ public class Home extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.share, menu);
         return true;
     }
 

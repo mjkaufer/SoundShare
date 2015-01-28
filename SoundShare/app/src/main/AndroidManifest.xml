@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.kaufer.soundshare" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -15,6 +17,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Share"
+            android:label="@string/title_activity_share" >
+        </activity>
+        <activity
+            android:name=".Sounds"
+            android:label="@string/title_activity_sounds" >
         </activity>
     </application>
 
