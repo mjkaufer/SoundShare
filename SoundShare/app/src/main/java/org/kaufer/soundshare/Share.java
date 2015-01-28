@@ -52,6 +52,10 @@ public class Share extends Activity {
                 HashMap<String, Sound> sounds = new HashMap<String, Sound>();
                 sounds.put(new Date().getTime() + "", share);
                 soundRef.push().setValue(sounds);//push to FB
+                Toast.makeText(getApplicationContext(), "Sound shared!", Toast.LENGTH_SHORT).show();
+
+                artist.setText("");
+                song.setText("");
 
             }
 

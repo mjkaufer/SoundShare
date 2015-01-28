@@ -45,7 +45,7 @@
         android:layout_height="fill_parent"
         android:layout_above="@+id/share"
         android:paddingTop="100dp"
-        android:id="@+id/"
+        android:id="@+id/ll"
         android:layout_alignRight="@+id/share"
         android:layout_alignEnd="@+id/share"
         android:layout_alignLeft="@+id/share"
