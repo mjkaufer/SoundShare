@@ -21,33 +21,41 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Share Sound"
+        android:text="Share"
         android:id="@+id/share"
-        android:layout_centerVertical="true"
+        android:textSize="24dp"
+        android:layout_above="@+id/sounds"
         android:layout_centerHorizontal="true"
-        android:textSize="24dp" />
+        android:layout_marginBottom="10dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Sounds"
+        android:text="Discover"
         android:id="@+id/sounds"
         android:textSize="24dp"
-        android:layout_below="@+id/share"
-        android:layout_alignRight="@+id/share"
-        android:layout_alignEnd="@+id/share"
-        android:layout_marginTop="54dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Share Sound"
+        android:text="SoundShare"
         android:id="@+id/textView"
         android:textSize="48dp"
         android:gravity="center"
         android:paddingTop="36dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/imageView"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/share"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

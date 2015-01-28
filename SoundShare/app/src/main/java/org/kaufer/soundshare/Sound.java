@@ -7,7 +7,11 @@ public class Sound {
 
     private String song, artist, genre;
 
-    public Sound(String s, String a, String g){//song, artist, genre
+    private Sound(){
+
+    }
+
+    Sound(String s, String a, String g){//song, artist, genre
         song = s;
         artist = a;
         genre = g;

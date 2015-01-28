@@ -9,13 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
-
-import java.util.Date;
-import java.util.HashMap;
 
 
 public class Share extends Activity {
@@ -50,9 +46,8 @@ public class Share extends Activity {
                 Toast.makeText(getApplicationContext(), "Please enter an artist", Toast.LENGTH_SHORT).show();
             else{//everything checks out
                 Sound share = new Sound(song.getText().toString(), artist.getText().toString(), genre.getSelectedItem().toString());//change to string values
-                HashMap<String, Sound> sounds = new HashMap<String, Sound>();
-                sounds.put(new Date().getTime() + "", share);
-                soundRef.push().setValue(sounds);//push to FB
+
+                soundRef.push().setValue(share);//push to FB
                 Toast.makeText(getApplicationContext(), "Sound shared!", Toast.LENGTH_SHORT).show();
 
                 artist.setText("");
@@ -63,7 +58,7 @@ public class Share extends Activity {
 
             }
         });
-        genre = (Spinner)findViewById(R.id.genre);
+        genre = (Spinner)findViewById(R.id.genres);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genre.setAdapter(adapter);

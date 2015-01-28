@@ -71,7 +71,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/genre"
+            android:id="@+id/genres"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:longClickable="false" />
