@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:name="org.kaufer.soundshare.Info"
-        android:id="@+id/Info"
+        android:id="@+id/fragment"
         tools:layout="@layout/fragment_info"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -35,5 +35,42 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="47dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/share"
+        android:layout_alignLeft="@+id/fragment"
+        android:layout_alignStart="@+id/fragment"
+        android:layout_alignRight="@+id/fragment"
+        android:layout_alignEnd="@+id/fragment"
+        android:layout_below="@+id/textView"
+        android:paddingTop="100dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/song"
+            android:layout_gravity="center_horizontal"
+            android:hint="Song Name"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/artist"
+            android:layout_gravity="center_horizontal"
+            android:hint="Artist"
+            android:gravity="center_horizontal" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/genre"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:longClickable="false" />
+    </LinearLayout>
 
 </RelativeLayout>

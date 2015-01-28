@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.firebase.client.Firebase;
 
@@ -13,6 +15,7 @@ import com.firebase.client.Firebase;
 public class Share extends Activity {
 
     Button share;
+    Spinner genre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,11 @@ public class Share extends Activity {
                 Sound share = new Sound("","","");//change to string values
             }
         });
+        genre = (Spinner)findViewById(R.id.genre);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genre.setAdapter(adapter);
+        genre.setPrompt("Genre");
     }
 
 
