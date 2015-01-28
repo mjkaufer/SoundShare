@@ -23,7 +23,9 @@ public class Share extends Activity {
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //make a new Sound, send to firebase
 
+                Sound share = new Sound("","","");//change to string values
             }
         });
     }
