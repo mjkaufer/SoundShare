@@ -23,15 +23,16 @@ public class Share extends Activity {
     Button share;
     Spinner genre;
     EditText artist, song;
-    Firebase ref = new Firebase("https://kaufersoundshare.firebaseio.com/");
-    Firebase soundRef = ref.child("sounds");
+    Firebase ref;
+    Firebase soundRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
         Firebase.setAndroidContext(this);
-
+        ref = new Firebase("https://kaufersoundshare.firebaseio.com/");
+        soundRef = ref.child("sounds");
         share = (Button)findViewById(R.id.share);
         artist = (EditText)findViewById(R.id.artist);
         song = (EditText)findViewById(R.id.song);
