@@ -1,8 +1,26 @@
 <resources>
+    <color name="backgroundCol">#E4F1FE</color>
+    <color name="textCol">#336E7B</color>
+    <style name="buttonblue" parent="@android:style/Widget.Button">
+        <item name="android:textColor">#E4F1FE</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">0.2</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#336E7B</item>
+    </style>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:buttonStyle">@style/buttonblue</item>
+        <!--<item name="android:background">#E4F1FE</item>-->
+        <!--<item name="android:textColor">#336E7B</item>-->
+        <item name="android:windowBackground">@color/backgroundCol</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">@color/textCol</item>
     </style>
 
 </resources>
+

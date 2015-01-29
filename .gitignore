@@ -6,3 +6,4 @@ SoundShare/.idea/libraries
 SoundShare/.DS_Store
 SoundShare/build
 SoundShare/*.jks
+*.jks

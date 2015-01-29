@@ -7,7 +7,8 @@
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
     tools:context=".Home"
-    android:id="@+id/Home">
+    android:id="@+id/Home"
+    android:background="#E4F1FE">
 
     <!--<fragment-->
         <!--android:layout_width="wrap_content"-->
@@ -26,7 +27,8 @@
         android:textSize="24dp"
         android:layout_above="@+id/sounds"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:padding="10dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -36,7 +38,8 @@
         android:textSize="24dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:padding="10dp" />
 
     <ImageView
         android:layout_width="300dp"
