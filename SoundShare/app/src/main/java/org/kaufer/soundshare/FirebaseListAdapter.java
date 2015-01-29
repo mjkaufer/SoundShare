@@ -147,6 +147,10 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
         mModelKeys.clear();
     }
 
+    public void changeQuery(Query q){
+        mRef = q;
+    }
+
     @Override
     public int getCount() {
         return mModels.size();

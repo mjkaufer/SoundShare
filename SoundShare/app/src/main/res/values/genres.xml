@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="genres">
-        <item>Rock</item>
+        <item>Modern Rock</item>
+        <item>Classic Rock</item>
         <item>Pop</item>
+        <item>Classical</item>
         <item>Country</item>
         <item>Alternative</item>
         <item>Techno</item>
@@ -10,8 +12,10 @@
     </string-array>
     <string-array name="genresWithAll">
         <item>All</item>
-        <item>Rock</item>
+        <item>Modern Rock</item>
+        <item>Classic Rock</item>
         <item>Pop</item>
+        <item>Classical</item>
         <item>Country</item>
         <item>Alternative</item>
         <item>Techno</item>

@@ -2,6 +2,7 @@ package org.kaufer.soundshare;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,12 +12,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+//import com.google.api.services.youtube.YouTube;
+//
+import com.google.android.youtube.player.YouTubeIntents;
 
 
 public class Sounds extends ListActivity {
@@ -57,6 +62,21 @@ public class Sounds extends ListActivity {
         soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
         l.setAdapter(soundShareListAdapter);
 
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                String artist = ((TextView)adapterView.findViewById(R.id.artist)).getText().toString();
+//                System.out.println(artist);
+                Sound sound = ((Sound)soundShareListAdapter.getItem(i));
+                String search = sound.getSong() + ", by " + sound.getArtist();
+                System.out.println(search);
+
+                Intent intent = YouTubeIntents.createSearchIntent(getApplicationContext(), search);
+                startActivity(intent);
+
+            }
+        });
+
         genre = (Spinner)findViewById(R.id.genres);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.genresWithAll, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -78,6 +98,7 @@ public class Sounds extends ListActivity {
                     soundShareListAdapter = new SoundShareListAdapter(soundRef.orderByChild("genre").equalTo(g).limitToLast(20), thisActivity, R.layout.shared_sound_list);
                 soundShareListAdapter.notifyDataSetChanged();
                 getListView().setAdapter(soundShareListAdapter);
+
 //                getListView().setAdapter(soundShareListAdapter);
 //                soundShareListAdapter.notifyDataSetChanged();
 //                soundShareListAdapter.

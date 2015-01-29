@@ -16,8 +16,11 @@ import com.firebase.client.Query;
  */
 public class SoundShareListAdapter extends FirebaseListAdapter<Sound> {
 
+    public String pArtist, pSong;
+
     public SoundShareListAdapter(Query ref, Activity activity, int layout) {
         super(ref, Sound.class, layout, activity);
+        pArtist = pSong = "";
     }
 
     @Override
@@ -28,10 +31,11 @@ public class SoundShareListAdapter extends FirebaseListAdapter<Sound> {
         String song = sound.getSong();
         TextView songText = (TextView) view.findViewById(R.id.song);
         songText.setText(song);
+        pSong = song;
 
         String artist = sound.getArtist();
+        pArtist = artist;
         String genre = sound.getGenre();
-
         TextView artistText = (TextView) view.findViewById(R.id.artist);
         artistText.setText(artist + " (" + genre + ")");
 

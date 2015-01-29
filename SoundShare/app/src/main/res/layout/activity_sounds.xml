@@ -15,7 +15,6 @@
         android:id="@android:id/list"
         android:headerDividersEnabled="false"
         android:focusableInTouchMode="false"
-        android:layout_below="@+id/genres"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="81dp" />

@@ -24,7 +24,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Share Sound"
         android:id="@+id/textView"
-        android:layout_below="@+id/fragment"
         android:layout_centerHorizontal="true"
         android:textSize="48dp"
         android:gravity="center"
