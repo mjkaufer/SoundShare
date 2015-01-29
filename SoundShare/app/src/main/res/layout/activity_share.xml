@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:context=".Share"
+    android:id="@+id/Share">
+
+    <!--<fragment-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:name="org.kaufer.soundshare.Info"-->
+        <!--android:id="@+id/fragment"-->
+        <!--tools:layout="@layout/fragment_info"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Share Sound"
+        android:id="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:textSize="48dp"
+        android:gravity="center"
+        android:paddingTop="36dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Sound"
+        android:id="@+id/share"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/share"
+        android:paddingTop="100dp"
+        android:id="@+id/ll"
+        android:layout_alignRight="@+id/share"
+        android:layout_alignLeft="@+id/share"
+        android:layout_below="@+id/textView">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/song"
+            android:layout_gravity="center_horizontal"
+            android:hint="Song Name"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/artist"
+            android:layout_gravity="center_horizontal"
+            android:hint="Artist"
+            android:gravity="center_horizontal" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/genres"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center|center_vertical|center_horizontal"
+            android:longClickable="false" />
+    </LinearLayout>
+
+</RelativeLayout>
