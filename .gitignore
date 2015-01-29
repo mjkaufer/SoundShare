@@ -49,3 +49,4 @@ Temporary Items
 /.idea/libraries
 .DS_Store
 /build
+*.jks
