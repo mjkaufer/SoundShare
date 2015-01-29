@@ -3,10 +3,11 @@
     <string-array name="genres">
         <item>Modern Rock</item>
         <item>Classic Rock</item>
+        <item>Alternative</item>
         <item>Pop</item>
+        <Item>Rap</Item>
         <item>Classical</item>
         <item>Country</item>
-        <item>Alternative</item>
         <item>Techno</item>
         <item>Other</item>
     </string-array>
@@ -14,10 +15,11 @@
         <item>All</item>
         <item>Modern Rock</item>
         <item>Classic Rock</item>
+        <item>Alternative</item>
         <item>Pop</item>
+        <Item>Rap</Item>
         <item>Classical</item>
         <item>Country</item>
-        <item>Alternative</item>
         <item>Techno</item>
         <item>Other</item>
     </string-array>
