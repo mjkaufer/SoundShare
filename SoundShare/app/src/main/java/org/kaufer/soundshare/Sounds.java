@@ -28,6 +28,7 @@ public class Sounds extends ListActivity {
     SoundShareListAdapter soundShareListAdapter;
     Activity thisActivity = this;
     String lastG = "all";
+    ListView l;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +37,23 @@ public class Sounds extends ListActivity {
 
         ref = new Firebase("https://kaufersoundshare.firebaseio.com/");
         soundRef = ref.child("sounds");
+//        soundRef.orderByChild("genre").equalTo("Rock").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                System.out.println(dataSnapshot);
+//                System.out.println(dataSnapshot.getValue());
+//                Sound model = (Sound)dataSnapshot.getValue();
+//                System.out.println(model);
+////                System.out.println(dataSnapshot.getValue(Sound.class).getSong());
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//
+//            }
+//        });
 
-        final ListView l = getListView();
+        l = getListView();
         soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
         l.setAdapter(soundShareListAdapter);
 
@@ -50,14 +66,22 @@ public class Sounds extends ListActivity {
         genre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String g = genre.getSelectedItem().toString().toLowerCase();
+                String g = genre.getSelectedItem().toString();
                 if(g.equals(lastG))
                     return;
                 lastG = g;
-                if (g.equals("all"))
+                soundRef = ref.child("sounds");
+                Firebase temp = ref.child("sounds");
+                if (g.equals("All"))
                     soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
                 else
-                    soundShareListAdapter = new SoundShareListAdapter(soundRef.startAt(g, "genre").endAt(g + "~", "genre").limitToLast(20), thisActivity, R.layout.shared_sound_list);
+                    soundShareListAdapter = new SoundShareListAdapter(soundRef.orderByChild("genre").equalTo(g).limitToLast(20), thisActivity, R.layout.shared_sound_list);
+                soundShareListAdapter.notifyDataSetChanged();
+                getListView().setAdapter(soundShareListAdapter);
+//                getListView().setAdapter(soundShareListAdapter);
+//                soundShareListAdapter.notifyDataSetChanged();
+//                soundShareListAdapter.
+//                l.setAdapter(soundShareListAdapter);
             }
 
             @Override
