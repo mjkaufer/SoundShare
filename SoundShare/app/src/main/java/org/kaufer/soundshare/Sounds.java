@@ -34,6 +34,7 @@ public class Sounds extends ListActivity {
     Activity thisActivity = this;
     String lastG = "all";
     ListView l;
+    boolean alreadyConnected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +48,7 @@ public class Sounds extends ListActivity {
         l = getListView();
         soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
         l.setAdapter(soundShareListAdapter);
-
+//        l.setScrollY(0);
         l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -110,9 +111,11 @@ public class Sounds extends ListActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 boolean connected = (Boolean) dataSnapshot.getValue();
                 if (connected) {
-                    Toast.makeText(Sounds.this, "Connected to Firebase", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Sounds.this, "Online", Toast.LENGTH_SHORT).show();
+                } else if(!alreadyConnected) {
+                    Toast.makeText(Sounds.this, "Connecting...", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(Sounds.this, "Disconnected from Firebase", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Sounds.this, "Offline", Toast.LENGTH_SHORT).show();
                 }
             }
 

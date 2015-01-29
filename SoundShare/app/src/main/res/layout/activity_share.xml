@@ -30,13 +30,15 @@
         android:paddingTop="36dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Share Sound"
         android:id="@+id/share"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp" />
+        android:layout_marginBottom="47dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -46,9 +48,7 @@
         android:paddingTop="100dp"
         android:id="@+id/ll"
         android:layout_alignRight="@+id/share"
-        android:layout_alignEnd="@+id/share"
         android:layout_alignLeft="@+id/share"
-        android:layout_alignStart="@+id/share"
         android:layout_below="@+id/textView">
 
         <EditText
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/genres"
             android:layout_gravity="center_horizontal"
-            android:gravity="center"
+            android:gravity="center|center_vertical|center_horizontal"
             android:longClickable="false" />
     </LinearLayout>
 
