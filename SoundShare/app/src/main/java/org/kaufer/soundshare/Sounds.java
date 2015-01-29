@@ -42,21 +42,7 @@ public class Sounds extends ListActivity {
 
         ref = new Firebase("https://kaufersoundshare.firebaseio.com/");
         soundRef = ref.child("sounds");
-//        soundRef.orderByChild("genre").equalTo("Rock").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                System.out.println(dataSnapshot);
-//                System.out.println(dataSnapshot.getValue());
-//                Sound model = (Sound)dataSnapshot.getValue();
-//                System.out.println(model);
-////                System.out.println(dataSnapshot.getValue(Sound.class).getSong());
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
+
 
         l = getListView();
         soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
@@ -91,7 +77,6 @@ public class Sounds extends ListActivity {
                     return;
                 lastG = g;
                 soundRef = ref.child("sounds");
-                Firebase temp = ref.child("sounds");
                 if (g.equals("All"))
                     soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
                 else
@@ -146,6 +131,20 @@ public class Sounds extends ListActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.sounds, menu);
         return true;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        try {
+            soundRef = ref.child("sounds");
+            if (lastG.equals("All"))
+                soundShareListAdapter = new SoundShareListAdapter(soundRef.limitToLast(20), thisActivity, R.layout.shared_sound_list);
+            else
+                soundShareListAdapter = new SoundShareListAdapter(soundRef.orderByChild("genre").equalTo(lastG).limitToLast(20), thisActivity, R.layout.shared_sound_list);
+            soundShareListAdapter.notifyDataSetChanged();
+            getListView().setAdapter(soundShareListAdapter);
+        } catch(Exception e){}
     }
 
     @Override
